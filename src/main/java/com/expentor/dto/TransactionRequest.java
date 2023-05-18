@@ -1,20 +1,24 @@
 package com.expentor.dto;
 
+import java.time.LocalDate;
+
 import lombok.Data;
 
 @Data
 public class TransactionRequest {
 
-    String name;
+    private String name;
 
-    String description;
+    private String description;
 
-    double amount;
+    private double amount;
 
-    String from;
+    private String from;
 
-    String to;
+    private String to;
 
-    String type;
+    private String type;
+
+    private LocalDate date;
 
 }

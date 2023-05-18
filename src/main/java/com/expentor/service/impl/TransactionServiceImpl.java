@@ -39,6 +39,7 @@ public class TransactionServiceImpl implements TransactionService {
                 .from(request.getFrom())
                 .type(Transaction.Type.valueOf(request.getType()))
                 .userId(userId)
+                .date(request.getDate())
                 .build();
         repository.persist(transaction);
         if (!repository.isPersistent(transaction)) {
@@ -63,6 +64,7 @@ public class TransactionServiceImpl implements TransactionService {
         transaction.setAmount(request.getAmount());
         transaction.setTo(request.getTo());
         transaction.setFrom(request.getFrom());
+        transaction.setDate(request.getDate());
         repository.persist(transaction);
         if (!repository.isPersistent(transaction)) {
             return null;
